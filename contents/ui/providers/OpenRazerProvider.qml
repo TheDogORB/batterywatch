@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import org.kde.plasma.plasma5support 2.0 as P5Support
+import org.kde.plasma.plasmoid 2.0
 import "../DeviceUtils.js" as DeviceUtils
 
 // Razer device provider
@@ -26,6 +27,19 @@ Item {
 
     property var deviceData: ({})
     property var knownDevices: ({})
+    readonly property var emptyList: []
+
+    property bool razerEnabled: Plasmoid.configuration.useOpenRazerIntegration
+
+    onRazerEnabledChanged: {
+        if (!razerEnabled) {
+            devices = [];
+            deviceData = {};
+            knownDevices = {};
+        } else {
+            refresh();
+        }
+    }
 
     // ═══════════════════════════════════════════════════════════════════════
     // GUI RELATED FUNCTIONS
@@ -36,7 +50,7 @@ Item {
         listSource.disconnectSource(getDeviceListCmd);
         listSource.connectSource(getDeviceListCmd);
 
-        for (var id in deviceData) {
+        for (let id in deviceData) {
             fetchPowerInfo(id);
         }
     }
@@ -47,10 +61,10 @@ Item {
 
     // Updates the device model from the current internal state
     function updateOpenRazerDevices() {
-        var result = [];
+        let result = [];
 
-        for (var id in deviceData) {
-            var d = deviceData[id];
+        for (let id in deviceData) {
+            let d = deviceData[id];
 
             // Filter out devices w/o a battery or disconnected devices
             //
@@ -60,23 +74,47 @@ Item {
             //
             // openrazer can report battery being 100% charged up to 30s after
             // connecting a device
-            if (typeof d.battery !== "number" || d.battery <= 0)
+            if (typeof d.battery !== "number") {
                 continue;
+            }
+            if (d.firmware === undefined || d.firmware === "v0.0") {
+                continue;
+            }
             result.push({
                 name: d.name || i18n("Unknown Razer Device"),
                 serial: id,
                 percentage: d.battery,
                 type: d.type || "unknown",
                 icon: DeviceUtils.getIconForType(d.type || "unknown"),
-                connectionType: wirelessType,
+                connectionType: wirelessType,   // Always wireless, openRazer doesn't support Bluetooth devices -> handled by kernel
                 source: "openrazer",
-                batteries: [],
+                batteries: emptyList,           // OpenRazer does not support multiple batteries, only razer.device.power.getBattery() is exposed
                 charging: d.charging === true
             });
         }
 
-        // Sorts devices alphabetically
-        result.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+        // Sorts devices alphabetically, name is always d.name or Unknown Razer Device
+        result.sort((a, b) => a.name.localeCompare(b.name));
+
+        // Skips UI redraw if nothing has changed
+        if (result.length === devices.length) {
+            let changed = false;
+            for (let i = 0; i < result.length; i++) {
+                const r = result[i], d = devices[i];
+                if (
+                    r.serial !== d.serial || 
+                    r.percentage !== d.percentage ||
+                    r.charging !== d.charging || 
+                    r.name !== d.name
+                    ) {
+                    changed = true;
+                    break;
+                }
+            }
+            if (!changed)
+                return;
+        }
+
         devices = result;
     }
 
@@ -90,6 +128,7 @@ Item {
             return;
         batterySource.connectSource(`qdbus org.razer /org/razer/device/${id} razer.device.power.getBattery`);
         chargingSource.connectSource(`qdbus org.razer /org/razer/device/${id} razer.device.power.isCharging`);
+        detailsSource.connectSource(`qdbus org.razer /org/razer/device/${id} razer.device.misc.getFirmware`);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -108,38 +147,42 @@ Item {
         onNewData: (src, data) => {
             disconnectSource(src);
 
-            var ids = data.stdout.split("\n").map(s => s.trim()).filter(Boolean);
+            const ids = data.stdout.split("\n").map(s => s.trim()).filter(Boolean);
 
-            var current = {};
+            let current = {};
 
             ids.forEach(id => {
                 current[id] = true;
 
-                if (!knownDevices[id]) {
-                    deviceData[id] = {
+                if (!root.knownDevices[id]) {
+                    root.deviceData[id] = {
                         name: "",
                         type: "",
+                        firmware: undefined,
                         battery: undefined,
                         charging: false
                     };
 
-                    fetchNameAndType(id);
-                    fetchPowerInfo(id);
+                    root.fetchNameAndType(id);
+                    root.fetchPowerInfo(id);
                 }
             });
 
             // Remove unresponsive/stale devices
-            for (var id in knownDevices) {
+            for (let id in root.knownDevices) {
                 if (!current[id]) {
-                    delete deviceData[id];
+                    delete root.deviceData[id];
                 }
             }
 
-            knownDevices = current;
-            updateOpenRazerDevices();
+            root.knownDevices = current;
+            Qt.callLater(root.updateOpenRazerDevices);
         }
 
-        Component.onCompleted: connectSource(getDeviceListCmd)
+        Component.onCompleted: {
+            if (root.razerEnabled)
+                connectSource(root.getDeviceListCmd);
+        }
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -148,7 +191,6 @@ Item {
 
     // Updates percentage (battery charge) values via razer.device.power.getBattery
     // if the func exists for a device -> func doesn't exist for wired devices
-    // if 0 = device with battery with no connection
     P5Support.DataSource {
         id: batterySource
         engine: "executable"
@@ -159,24 +201,24 @@ Item {
 
             if (!src.includes("/device/"))
                 return;
-            var id = src.split("/device/")[1].split(" ")[0];
-            if (!deviceData[id])
+            const id = src.split("/device/")[1].split(" ")[0];
+            if (!root.deviceData[id])
                 return;
 
             // Non-battery device
             if (data.stderr && data.stderr.includes("UnknownMethod")) {
-                delete deviceData[id];
-                updateOpenRazerDevices();
+                delete root.deviceData[id];
+                Qt.callLater(root.updateOpenRazerDevices);
                 return;
             }
 
             // 0 is handled in updateOpenRazerDevices()
-            var raw = parseFloat(data.stdout);
+            const raw = parseFloat(data.stdout);
             if (isNaN(raw))
                 return;
-            deviceData[id].battery = Math.round(Math.max(0, Math.min(100, raw)));
+            root.deviceData[id].battery = Math.round(Math.max(0, Math.min(100, raw)));
 
-            updateOpenRazerDevices();
+            Qt.callLater(root.updateOpenRazerDevices);
         }
     }
 
@@ -195,15 +237,15 @@ Item {
 
             if (!src.includes("/device/"))
                 return;
-            var id = src.split("/device/")[1].split(" ")[0];
-            if (!deviceData[id])
+            const id = src.split("/device/")[1].split(" ")[0];
+            if (!root.deviceData[id])
                 return;
 
             if (data.stderr && data.stderr.length > 0)
                 return;
-            deviceData[id].charging = data.stdout.trim() === "true";
+            root.deviceData[id].charging = data.stdout.trim() === "true";
 
-            updateOpenRazerDevices();
+            Qt.callLater(root.updateOpenRazerDevices);
         }
     }
 
@@ -221,16 +263,24 @@ Item {
 
             if (!src.includes("/device/"))
                 return;
-            var id = src.split("/device/")[1].split(" ")[0];
-            if (!deviceData[id])
+            const id = src.split("/device/")[1].split(" ")[0];
+            if (!root.deviceData[id]) {
                 return;
+            }
+            // name/type fetched once on connect
+            // ignore errors to avoid overwriting with empty/garbage values
+            if (data.stderr && data.stderr.length > 0) {
+                return;
+            }
             if (src.endsWith("getDeviceName")) {
-                deviceData[id].name = data.stdout.trim();
+                root.deviceData[id].name = data.stdout.trim();
             } else if (src.endsWith("getDeviceType")) {
-                deviceData[id].type = data.stdout.trim();
+                root.deviceData[id].type = data.stdout.trim();
+            } else if (src.endsWith("getFirmware")) {
+                root.deviceData[id].firmware = data.stdout.trim();
             }
 
-            updateOpenRazerDevices();
+            Qt.callLater(root.updateOpenRazerDevices);
         }
     }
 
@@ -240,11 +290,9 @@ Item {
 
     // Periodic 'device discovery' scan + battery refresh
     Timer {
-        interval: 5000
-        running: true
+        interval: Plasmoid.configuration.openRazerPollingTime * 1000
+        running: root.razerEnabled
         repeat: true
-        onTriggered: {
-            refresh();
-        }
+        onTriggered: root.refresh()
     }
 }
