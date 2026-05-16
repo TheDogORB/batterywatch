@@ -18,10 +18,19 @@
 
 ## Features
 
-*   **Unified Monitoring**: See the battery status of all connected devices in one place.
-*   **Smart Display**: A minimal tray icon that expands into a detailed list when clicked, and automatically hides when no devices are connected - no wasted space when nothing to show.
-*   **Bluetooth Control**: Disconnect Bluetooth devices directly from the widget.
-*   **Customizable Visibility**: Easily hide or show specific devices from the system tray to keep your workspace clutter-free.
+- **Unified Monitoring** - see battery levels of all your devices in one place, right in your system tray
+- **Smart Display** - minimal tray icon that expands into a detailed list on click, and auto-hides when no devices are connected
+- **Customizable Appearance** - configure font family, font size, icon size, and per-level battery colors (charging, warning, critical)
+- **Customizable Visibility** - hide or show specific devices to keep your tray clutter-free
+
+## Supported Integrations
+
+| Provider | What it covers |
+|----------|----------------|
+| **UPower** | Bluetooth and wireless peripherals reported by the system - headphones, mice, keyboards, game controllers, and more |
+| **OpenLinkHub** | Corsair and other devices managed by [OpenLinkHub](https://github.com/jurkovic-nikola/OpenLinkHub) |
+| **OpenRazer** | Razer peripherals via [OpenRazer](https://openrazer.github.io/) |
+| **KDE Connect** | Battery levels of paired KDE Connect devices (phones, tablets, etc), with easy unpair action |
 
 ## Installation
 
@@ -62,6 +71,12 @@ kpackagetool6 --type Plasma/Applet --install BatteryWatch.plasmoid
 ./dev-uninstall.sh
 ```
 
+## Support the Project
+
+If BatteryWatch saves you from digging through menus just to check your headphone battery, consider buying me a coffee - I maintain this in my spare time and it genuinely helps!
+
+<a href="https://www.buymeacoffee.com/itayavra" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/itayavra/batterywatch/issues).
@@ -78,9 +93,4 @@ For instructions on how to contribute translations, add new languages, or test c
 | pl     | polish       | ✅ Complete |   100% |
 <!-- TRANSLATIONS_END -->
 
-## Support the Project ❤️
-
-If you find BatteryWatch useful and want to support its development, consider buying me a coffee 🫶 ☕
-
-<a href="https://www.buymeacoffee.com/itayavra" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
