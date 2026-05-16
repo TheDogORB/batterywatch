@@ -116,7 +116,6 @@ Item {
         if (device.connectionType === root.bluetoothType && device.bluetoothAddress) {
             const addr = device.bluetoothAddress
             device.disconnect = () => btDisconnectSource.connectSource("bluetoothctl disconnect " + addr)
-            device.disconnectLabel = i18n("Disconnect")
             device.disconnectTooltip = i18n("Disconnect device")
         }
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: batterywatch\n"
 "Report-Msgid-Bugs-To: https://github.com/itayavra/batterywatch\n"
-"POT-Creation-Date: 2026-03-24 22:15+0200\n"
+"POT-Creation-Date: 2026-05-16 22:39+0300\n"
 "PO-Revision-Date: 2026-01-03 16:20+0100\n"
 "Last-Translator: AzraelBunn\n"
 "Language-Team: \n"
@@ -21,35 +21,159 @@ msgstr "BatteryWatch"
 
 #: ../contents/config/config.qml
 msgid "Appearance"
-msgstr ""
+msgstr "Wygląd"
 
 #: ../contents/config/config.qml
+msgid "Integrations"
+msgstr "Integracje"
+
+#: ../contents/config/config.qml
+msgid "Advanced settings"
+msgstr "Ustawienia zaawansowane"
+
+#: ../contents/ui/config/AdvancedSettings.qml
+msgid "Toggle Debug mode"
+msgstr "Przełącz tryb debugowania"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "System Default (%1)"
+msgstr "Domyślny systemu (%1)"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Tray Text Settings"
+msgstr "Ustawienia tekstu zasobnika"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font family:"
+msgstr "Rodzina czcionek:"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Change the font family used for system tray text."
+msgstr "Zmień czcionkę używaną w tekście zasobnika systemowego."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Style"
+msgstr "Styl"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Bold"
+msgstr "Pogrubiony"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Make the tray text bold.\n"
+"Adjust weight between 100 and 1000."
+msgstr ""
+"Pogrubia tekst zasobnika.\n"
+"Waga regulowana w zakresie 100–1000."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Italic"
+msgstr "Kursywa"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Make the tray text italic."
+msgstr "Pochyla tekst zasobnika."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Sizes"
+msgstr "Rozmiary"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font"
+msgstr "Czcionka"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray text (in pixels)."
+msgstr "Dostosuj rozmiar tekstu zasobnika (w pikselach)."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Icon"
+msgstr "Ikona"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray icons (in pixels)."
+msgstr "Dostosuj rozmiar ikon zasobnika (w pikselach)."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Battery Colors"
+msgstr "Kolory baterii"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Default"
+msgstr "Domyślny"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Use when no other color state applies. When disabled, system color is used instead."
+msgstr "Używany gdy żaden inny kolor nie ma zastosowania. Gdy wyłączone, używany jest kolor systemowy."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Charging"
+msgstr "Ładowanie"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Overrides all other colors when device is charging.\n"
+"Not all devices are currently supported!"
+msgstr ""
+"Nadpisuje wszystkie inne kolory gdy urządzenie się ładuje.\n"
+"Nie wszystkie urządzenia są aktualnie obsługiwane!"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 1"
+msgstr "Strefa 1"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "≤"
+msgstr "≤"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "%"
+msgstr "%"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Applied when battery falls below the set threshold."
+msgstr "Stosowany gdy poziom baterii spada poniżej ustawionego progu"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 2"
+msgstr "Strefa 2"
+
+#: ../contents/ui/config/Modules.qml
 msgid "OpenLinkHub Integration"
 msgstr "Integracja z OpenLinkHub"
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Font Size: "
-msgstr ""
+#: ../contents/ui/config/Modules.qml
+msgid "Enable: "
+msgstr "Włącz: "
 
-#: ../contents/ui/config/Appearance.qml ../contents/ui/config/OpenLinkHub.qml
+#: ../contents/ui/config/Modules.qml
 msgid "Enabled"
 msgstr "Włączona"
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Size (px): "
-msgstr ""
+#: ../contents/ui/config/Modules.qml
+msgid "Port: "
+msgstr "Port: "
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Device Icon Size: "
-msgstr ""
+#: ../contents/ui/config/Modules.qml
+msgid "OpenRazer Integration"
+msgstr "Integracja z OpenRazer"
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "Enable OpenLinkHub Integration: "
-msgstr "Włącz integrację z OpenLinkHub"
+#: ../contents/ui/config/Modules.qml
+msgid "Enable"
+msgstr "Włącz"
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "OpenLinkHub Port: "
-msgstr "Port serwera OpenLinkHub: "
+#: ../contents/ui/config/Modules.qml
+msgid "Polling interval"
+msgstr "Interwał odpytywania"
+
+#: ../contents/ui/config/Modules.qml
+msgid "s"
+msgstr "s"
+
+#: ../contents/ui/config/Modules.qml
+msgid "KDE Connect Integration"
+msgstr "Integracja z KDE Connect"
 
 #. i18n: %1 is the version number.
 #: ../contents/ui/main.qml
@@ -110,14 +234,14 @@ msgstr "Bateria"
 #. i18n: %1 is the battery label or simply the word, ‘Battery’. %2 is the charge percentage value.
 #. %3 is a Unicode lightning symbol displayed when the device is charging.
 #: ../contents/ui/main.qml
-msgid "%1: %2%%3"
-msgstr "%1: %2%%3"
+msgid "%1: <span style=\"color:%4\">%2%</span>%3"
+msgstr "%1: <span style=\"color:%4\">%2%</span>%3"
 
 #: ../contents/ui/main.qml
 msgid "Disconnect"
 msgstr "Rozłącz"
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/main.qml ../contents/ui/providers/CompanionProvider.qml ../contents/ui/providers/UPowerProvider.qml
 msgid "Disconnect device"
 msgstr "Rozłącz urządzenie"
 
@@ -146,8 +270,24 @@ msgid "BatteryWatch: Companion service disconnected"
 msgstr "BatteryWatch: Usługa towarzysząca rozłączona"
 
 #: ../contents/ui/providers/CompanionProvider.qml
+msgid "BatteryWatch: Companion service connected"
+msgstr "BatteryWatch: Usługa towarzysząca połączona"
+
+#: ../contents/ui/providers/CompanionProvider.qml
 msgid "BatteryWatch: Failed to parse companion data:"
 msgstr "BatteryWatch: Przetwarzanie danych usługi towarzyszącej nie powiodło się: "
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "Unpair KDE Connect device"
+msgstr "Rozparuj urządzenie KDE Connect"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon unavailable"
+msgstr "BatteryWatch: Usługa KDE Connect niedostępna"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon connected"
+msgstr "BatteryWatch: Usługa KDE Connect połączona"
 
 #. i18n: %1 is the number of devices found.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
@@ -222,7 +362,11 @@ msgstr "Nie udało się przetworzyć danych urządzenia:"
 #. i18n: %1 is the serial number of the device.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Server error fetching device '%1':"
-msgstr "Wystąpił błąd serwera podczas pobierania informacji o urządzeniu dla numeru seryjnego '%1':Se"
+msgstr "Wystąpił błąd serwera podczas pobierania informacji o urządzeniu dla numeru seryjnego '%1':"
+
+#: ../contents/ui/providers/OpenRazerProvider.qml
+msgid "Unknown Razer Device"
+msgstr "Nieznane urządzenie Razer"
 
 #. i18n: Used when a device is known by BatteryWatch to be misreported by UPower.
 #. %1 is the device's model name. %2 is the erroneously reported device type (e.g.: ‘mouse’).

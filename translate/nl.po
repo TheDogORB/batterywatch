@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: batterywatch\n"
 "Report-Msgid-Bugs-To: https://github.com/itayavra/batterywatch\n"
-"POT-Creation-Date: 2026-03-24 22:15+0200\n"
+"POT-Creation-Date: 2026-05-16 22:39+0300\n"
 "PO-Revision-Date: 2026-03-25 16:45+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -27,32 +27,160 @@ msgid "Appearance"
 msgstr "Vormgeving"
 
 #: ../contents/config/config.qml
+msgid "Integrations"
+msgstr "Integraties"
+
+#: ../contents/config/config.qml
+msgid "Advanced settings"
+msgstr "Geavanceerde instellingen"
+
+#: ../contents/ui/config/AdvancedSettings.qml
+msgid "Toggle Debug mode"
+msgstr "Foutopsporingsmodus in-/uitschakelen"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "System Default (%1)"
+msgstr "Systeemstandaard (%1)"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Tray Text Settings"
+msgstr "Systeemvakinstellingen"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font family:"
+msgstr "Lettertype:"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Change the font family used for system tray text."
+msgstr "Verander het lettertype voor de systeemvaktekst."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Style"
+msgstr "Stijl"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Bold"
+msgstr "Vet"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Make the tray text bold.\n"
+"Adjust weight between 100 and 1000."
+msgstr ""
+"Maak de systeemvaktekst vet.\n"
+"Pas het gewicht aan tussen 100 en 1000."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Italic"
+msgstr "Cursief"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Make the tray text italic."
+msgstr "Maak de systeemvaktekst cursief."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Sizes"
+msgstr "Groottes"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font"
+msgstr "Tekstgrootte"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray text (in pixels)."
+msgstr "Pas de grootte van de systeemvaktekst aan (in pixels)."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Icon"
+msgstr "Pictogramgrootte"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray icons (in pixels)."
+msgstr "Pas de grootte van de systeemvakpictogrammen aan (in pixels)."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Battery Colors"
+msgstr "Accukleuren"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Default"
+msgstr "Standaard"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Use when no other color state applies. When disabled, system color is used "
+"instead."
+msgstr ""
+"Wordt gebruikt als geen andere kleurstatus van toepassing is. Als "
+"uitgeschakeld, wordt de systeemkleur gebruikt."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Charging"
+msgstr "Opladen"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Overrides all other colors when device is charging.\n"
+"Not all devices are currently supported!"
+msgstr ""
+"Overschrijft alle andere kleuren wanneer het apparaat oplaadt.\n"
+"Niet alle apparaten worden momenteel ondersteund!"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 1"
+msgstr "Zone 1"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "≤"
+msgstr "≤"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "%"
+msgstr "%"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Applied when battery falls below the set threshold."
+msgstr "Wordt toegepast wanneer de accu onder de ingestelde drempel valt"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 2"
+msgstr "Zone 2"
+
+#: ../contents/ui/config/Modules.qml
 msgid "OpenLinkHub Integration"
 msgstr "OpenLinkHub-integratie"
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Font Size: "
-msgstr "Andere tekstgrootte: "
+#: ../contents/ui/config/Modules.qml
+msgid "Enable: "
+msgstr "Inschakelen: "
 
-#: ../contents/ui/config/Appearance.qml ../contents/ui/config/OpenLinkHub.qml
+#: ../contents/ui/config/Modules.qml
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Size (px): "
-msgstr "Grootte (in pixels): "
+#: ../contents/ui/config/Modules.qml
+msgid "Port: "
+msgstr "Poort: "
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Device Icon Size: "
-msgstr "Aangepaste apparaatgrootte: "
+#: ../contents/ui/config/Modules.qml
+msgid "OpenRazer Integration"
+msgstr "OpenRazer-integratie"
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "Enable OpenLinkHub Integration: "
-msgstr "OpenLinkHub-integratie inschakelen: "
+#: ../contents/ui/config/Modules.qml
+msgid "Enable"
+msgstr "Inschakelen"
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "OpenLinkHub Port: "
-msgstr "OpenLinkHub-poort: "
+#: ../contents/ui/config/Modules.qml
+msgid "Polling interval"
+msgstr "Verversingsinterval"
+
+#: ../contents/ui/config/Modules.qml
+msgid "s"
+msgstr "s"
+
+#: ../contents/ui/config/Modules.qml
+msgid "KDE Connect Integration"
+msgstr "KDE Connect-integratie"
 
 #. i18n: %1 is the version number.
 #: ../contents/ui/main.qml
@@ -114,14 +242,15 @@ msgstr "Accu"
 #. i18n: %1 is the battery label or simply the word, ‘Battery’. %2 is the charge percentage value.
 #. %3 is a Unicode lightning symbol displayed when the device is charging.
 #: ../contents/ui/main.qml
-msgid "%1: %2%%3"
-msgstr "%1: %2%%3"
+msgid "%1: <span style=\"color:%4\">%2%</span>%3"
+msgstr "%1: <span style=\"color:%4\">%2%</span>%3"
 
 #: ../contents/ui/main.qml
 msgid "Disconnect"
 msgstr "Verbinding verbreken"
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/main.qml ../contents/ui/providers/CompanionProvider.qml
+#: ../contents/ui/providers/UPowerProvider.qml
 msgid "Disconnect device"
 msgstr "Verbreek de verbinding met het apparaat"
 
@@ -150,8 +279,24 @@ msgid "BatteryWatch: Companion service disconnected"
 msgstr "BatteryWatch: verbinding met hulpdienst verbroken"
 
 #: ../contents/ui/providers/CompanionProvider.qml
+msgid "BatteryWatch: Companion service connected"
+msgstr "BatteryWatch: verbinding met hulpdienst tot stand gebracht"
+
+#: ../contents/ui/providers/CompanionProvider.qml
 msgid "BatteryWatch: Failed to parse companion data:"
 msgstr "BatteryWatch: gegevensverwerking van hulpdienst mislukt:"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "Unpair KDE Connect device"
+msgstr "KDE Connect-apparaat ontkoppelen"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon unavailable"
+msgstr "BatteryWatch: KDE Connect-service niet beschikbaar"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon connected"
+msgstr "BatteryWatch: verbinding met KDE Connect-service tot stand gebracht"
 
 #. i18n: %1 is the number of devices found.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
@@ -190,7 +335,7 @@ msgstr "Ongeldige accu-informatie: overslaan van"
 #. i18n: %1 is the serial number of the device.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Device '%1' is not connected, removing."
-msgstr "‘%1’ is niet verbonden en wordt daarom verwijderd."
+msgstr "'%1' is niet verbonden en wordt daarom verwijderd."
 
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Processed devices:"
@@ -207,7 +352,7 @@ msgstr "Ongeldige accu-informatie ontvangen"
 #. i18n: %1 is the serial number of the device.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Device '%1' is not connected, skipping."
-msgstr "‘%1’ is niet verbonden en wordt daarom overgeslagen."
+msgstr "'%1' is niet verbonden en wordt daarom overgeslagen."
 
 #. i18n: %1 is the serial number of the device.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
@@ -226,7 +371,11 @@ msgstr "De apparaatinformatie kan niet worden verwerkt:"
 #. i18n: %1 is the serial number of the device.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Server error fetching device '%1':"
-msgstr "Er is een serverfout opgetreden tijdens het ophalen van ‘%1’:"
+msgstr "Er is een serverfout opgetreden tijdens het ophalen van '%1':"
+
+#: ../contents/ui/providers/OpenRazerProvider.qml
+msgid "Unknown Razer Device"
+msgstr "Onbekend Razer-apparaat"
 
 #. i18n: Used when a device is known by BatteryWatch to be misreported by UPower.
 #. %1 is the device's model name. %2 is the erroneously reported device type (e.g.: ‘mouse’).
@@ -234,4 +383,4 @@ msgstr "Er is een serverfout opgetreden tijdens het ophalen van ‘%1’:"
 #: ../contents/ui/providers/UPowerProvider.qml
 msgid "BatteryWatch: Applying UPower device override for '%1': %2 -> %3"
 msgstr ""
-"BatteryWatch: er wordt een UPower-voorrangsregel ingesteld voor ‘%1’: %2 → %3"
+"BatteryWatch: er wordt een UPower-voorrangsregel ingesteld voor '%1': %2 → %3"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: batterywatch\n"
 "Report-Msgid-Bugs-To: https://github.com/itayavra/batterywatch\n"
-"POT-Creation-Date: 2026-03-24 22:15+0200\n"
+"POT-Creation-Date: 2026-05-16 22:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,31 +26,151 @@ msgid "Appearance"
 msgstr ""
 
 #: ../contents/config/config.qml
+msgid "Integrations"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "Advanced settings"
+msgstr ""
+
+#: ../contents/ui/config/AdvancedSettings.qml
+msgid "Toggle Debug mode"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "System Default (%1)"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Tray Text Settings"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font family:"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Change the font family used for system tray text."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Style"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Bold"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Make the tray text bold.\n"
+"Adjust weight between 100 and 1000."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Italic"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Make the tray text italic."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Sizes"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray text (in pixels)."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Icon"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray icons (in pixels)."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Battery Colors"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Default"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Use when no other color state applies. When disabled, system color is used instead."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Charging"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Overrides all other colors when device is charging.\n"
+"Not all devices are currently supported!"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 1"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "≤"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "%"
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Applied when battery falls below the set threshold."
+msgstr ""
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 2"
+msgstr ""
+
+#: ../contents/ui/config/Modules.qml
 msgid "OpenLinkHub Integration"
 msgstr ""
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Font Size: "
+#: ../contents/ui/config/Modules.qml
+msgid "Enable: "
 msgstr ""
 
-#: ../contents/ui/config/Appearance.qml ../contents/ui/config/OpenLinkHub.qml
+#: ../contents/ui/config/Modules.qml
 msgid "Enabled"
 msgstr ""
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Size (px): "
+#: ../contents/ui/config/Modules.qml
+msgid "Port: "
 msgstr ""
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Device Icon Size: "
+#: ../contents/ui/config/Modules.qml
+msgid "OpenRazer Integration"
 msgstr ""
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "Enable OpenLinkHub Integration: "
+#: ../contents/ui/config/Modules.qml
+msgid "Enable"
 msgstr ""
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "OpenLinkHub Port: "
+#: ../contents/ui/config/Modules.qml
+msgid "Polling interval"
+msgstr ""
+
+#: ../contents/ui/config/Modules.qml
+msgid "s"
+msgstr ""
+
+#: ../contents/ui/config/Modules.qml
+msgid "KDE Connect Integration"
 msgstr ""
 
 #. i18n: %1 is the version number.
@@ -112,14 +232,14 @@ msgstr ""
 #. i18n: %1 is the battery label or simply the word, ‘Battery’. %2 is the charge percentage value.
 #. %3 is a Unicode lightning symbol displayed when the device is charging.
 #: ../contents/ui/main.qml
-msgid "%1: %2%%3"
+msgid "%1: <span style=\"color:%4\">%2%</span>%3"
 msgstr ""
 
 #: ../contents/ui/main.qml
 msgid "Disconnect"
 msgstr ""
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/main.qml ../contents/ui/providers/CompanionProvider.qml ../contents/ui/providers/UPowerProvider.qml
 msgid "Disconnect device"
 msgstr ""
 
@@ -148,7 +268,23 @@ msgid "BatteryWatch: Companion service disconnected"
 msgstr ""
 
 #: ../contents/ui/providers/CompanionProvider.qml
+msgid "BatteryWatch: Companion service connected"
+msgstr ""
+
+#: ../contents/ui/providers/CompanionProvider.qml
 msgid "BatteryWatch: Failed to parse companion data:"
+msgstr ""
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "Unpair KDE Connect device"
+msgstr ""
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon unavailable"
+msgstr ""
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon connected"
 msgstr ""
 
 #. i18n: %1 is the number of devices found.
@@ -224,6 +360,10 @@ msgstr ""
 #. i18n: %1 is the serial number of the device.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Server error fetching device '%1':"
+msgstr ""
+
+#: ../contents/ui/providers/OpenRazerProvider.qml
+msgid "Unknown Razer Device"
 msgstr ""
 
 #. i18n: Used when a device is known by BatteryWatch to be misreported by UPower.

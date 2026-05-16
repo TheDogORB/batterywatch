@@ -64,7 +64,6 @@ Item {
             connectionType: 2,
             bluetoothAddress: id,
             disconnect: () => companionDisconnectSource.connectSource("bluetoothctl disconnect " + id),
-            disconnectLabel: i18n("Disconnect"),
             disconnectTooltip: i18n("Disconnect device")
         }
     }

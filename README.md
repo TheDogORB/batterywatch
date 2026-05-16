@@ -75,7 +75,7 @@ For instructions on how to contribute translations, add new languages, or test c
 | he     | Hebrew       | ✅ Complete |   100% |
 | hu     | Hungarian    | ✅ Complete |   100% |
 | nl     | Dutch        | ✅ Complete |   100% |
-| pl     | polish       | 🟡 In Progress |    91% |
+| pl     | polish       | ✅ Complete |   100% |
 <!-- TRANSLATIONS_END -->
 
 ## Support the Project ❤️

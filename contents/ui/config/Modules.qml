@@ -10,10 +10,10 @@ KCMUtils.SimpleKCM {
     property alias cfg_enableOpenLinkHubIntegration: enableOpenLinkHubIntegration.checked
     property alias cfg_openLinkHubApiPort: openLinkHubApiPort.value
 
-    property alias cfg_useOpenRazerIntegration: useOpenRazerIntegration.checked
+    property alias cfg_enableOpenRazerIntegration: enableOpenRazerIntegration.checked
     property alias cfg_openRazerPollingTime: openRazerPollingTime.value
 
-    property alias cfg_useKDEConnectIntegration: useKDEConnectIntegration.checked
+    property alias cfg_enableKDEConnectIntegration: enableKDEConnectIntegration.checked
     property alias cfg_kdeConnectPollingTime: kdeConnectPollingTime.value
 
     Kirigami.FormLayout {
@@ -41,30 +41,30 @@ KCMUtils.SimpleKCM {
         }
         Item {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Open Razer Integration")
+            Kirigami.FormData.label: i18n("OpenRazer Integration")
         }
 
         QQL.RowLayout {
             Kirigami.FormData.label: i18n("Enable")
 
             QQC2.CheckBox {
-                id: useOpenRazerIntegration
+                id: enableOpenRazerIntegration
             }
         }
 
         QQL.RowLayout {
-            Kirigami.FormData.label: i18n("Polling timer")
+            Kirigami.FormData.label: i18n("Polling interval")
 
             QQC2.SpinBox {
                 id: openRazerPollingTime
-                enabled: useOpenRazerIntegration.checked
+                enabled: enableOpenRazerIntegration.checked
                 from: 1
                 to: 3600
             }
 
             QQC2.Label {
                 text: i18n("s")
-                opacity: useOpenRazerIntegration.checked ? 0.7 : 0.5
+                opacity: enableOpenRazerIntegration.checked ? 0.7 : 0.5
             }
         }
 
@@ -77,7 +77,7 @@ KCMUtils.SimpleKCM {
             Kirigami.FormData.label: i18n("Enable")
 
             QQC2.CheckBox {
-                id: useKDEConnectIntegration
+                id: enableKDEConnectIntegration
             }
         }
 
@@ -86,14 +86,14 @@ KCMUtils.SimpleKCM {
 
             QQC2.SpinBox {
                 id: kdeConnectPollingTime
-                enabled: useKDEConnectIntegration.checked
+                enabled: enableKDEConnectIntegration.checked
                 from: 5
                 to: 3600
             }
 
             QQC2.Label {
                 text: i18n("s")
-                opacity: useKDEConnectIntegration.checked ? 0.7 : 0.5
+                opacity: enableKDEConnectIntegration.checked ? 0.7 : 0.5
             }
         }
     }
