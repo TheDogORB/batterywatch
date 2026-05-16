@@ -110,4 +110,13 @@
       <default>5</default>
     </entry>
   </group>
+
+  <group name="KDEConnect">
+    <entry name="useKDEConnectIntegration" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="kdeConnectPollingTime" type="Int">
+      <default>5</default>
+    </entry>
+  </group>
 </kcfg>

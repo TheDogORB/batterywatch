@@ -24,6 +24,12 @@ function getIconForType(deviceType) {
         case "monitor":
         case "display":
             return "video-display"
+        case "desktop":
+            return "computer"
+        case "laptop":
+            return "computer-laptop"
+        case "tv":
+            return "video-television"
         default:
             return "battery-symbolic"
     }

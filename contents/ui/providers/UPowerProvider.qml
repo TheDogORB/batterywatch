@@ -113,9 +113,24 @@ Item {
             device.serial = device.nativePath
         }
 
+        if (device.connectionType === root.bluetoothType && device.bluetoothAddress) {
+            const addr = device.bluetoothAddress
+            device.disconnect = () => btDisconnectSource.connectSource("bluetoothctl disconnect " + addr)
+            device.disconnectLabel = i18n("Disconnect")
+            device.disconnectTooltip = i18n("Disconnect device")
+        }
+
         return device
     }
-    
+
+    P5Support.DataSource {
+        id: btDisconnectSource
+        engine: "executable"
+        interval: 0
+        // UPower list refreshes every 2s automatically; no explicit post-action needed
+        onNewData: (src, data) => disconnectSource(src)
+    }
+
     P5Support.DataSource {
         id: listSource
         engine: "executable"

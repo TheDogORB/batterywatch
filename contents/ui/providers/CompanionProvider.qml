@@ -62,10 +62,21 @@ Item {
             nativePath: "",
             objectPath: "",
             connectionType: 2,
-            bluetoothAddress: id
+            bluetoothAddress: id,
+            disconnect: () => companionDisconnectSource.connectSource("bluetoothctl disconnect " + id),
+            disconnectLabel: i18n("Disconnect"),
+            disconnectTooltip: i18n("Disconnect device")
         }
     }
     
+    P5Support.DataSource {
+        id: companionDisconnectSource
+        engine: "executable"
+        interval: 0
+        // Companion polls on its own timer, refresh will pick up the change
+        onNewData: (src, data) => disconnectSource(src)
+    }
+
     P5Support.DataSource {
         id: pollSource
         engine: "executable"
@@ -99,7 +110,7 @@ Item {
                 
                 if (!root.available) {
                     root.available = true
-                    console.log(i18n("BatteryWatch: Companion service disconnected"))
+                    console.log(i18n("BatteryWatch: Companion service connected"))
                 }
             } catch (e) {
                 console.warn(i18n("BatteryWatch: Failed to parse companion data:"), e)

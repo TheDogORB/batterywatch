@@ -13,6 +13,9 @@ KCMUtils.SimpleKCM {
     property alias cfg_useOpenRazerIntegration: useOpenRazerIntegration.checked
     property alias cfg_openRazerPollingTime: openRazerPollingTime.value
 
+    property alias cfg_useKDEConnectIntegration: useKDEConnectIntegration.checked
+    property alias cfg_kdeConnectPollingTime: kdeConnectPollingTime.value
+
     Kirigami.FormLayout {
         id: page
 
@@ -62,6 +65,35 @@ KCMUtils.SimpleKCM {
             QQC2.Label {
                 text: i18n("s")
                 opacity: useOpenRazerIntegration.checked ? 0.7 : 0.5
+            }
+        }
+
+        Item {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("KDE Connect Integration")
+        }
+
+        QQL.RowLayout {
+            Kirigami.FormData.label: i18n("Enable")
+
+            QQC2.CheckBox {
+                id: useKDEConnectIntegration
+            }
+        }
+
+        QQL.RowLayout {
+            Kirigami.FormData.label: i18n("Polling interval")
+
+            QQC2.SpinBox {
+                id: kdeConnectPollingTime
+                enabled: useKDEConnectIntegration.checked
+                from: 5
+                to: 3600
+            }
+
+            QQC2.Label {
+                text: i18n("s")
+                opacity: useKDEConnectIntegration.checked ? 0.7 : 0.5
             }
         }
     }
