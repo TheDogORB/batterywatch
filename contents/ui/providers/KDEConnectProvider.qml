@@ -12,7 +12,7 @@ Item {
     property var knownDevices: ({})
     readonly property var emptyList: []
 
-    property bool kdeConnectEnabled: Plasmoid.configuration.useKDEConnectIntegration
+    property bool kdeConnectEnabled: Plasmoid.configuration.enableKDEConnectIntegration
 
     onKdeConnectEnabledChanged: {
         if (!kdeConnectEnabled) {
@@ -75,7 +75,6 @@ Item {
                 nativePath: null,
                 bluetoothAddress: null,
                 disconnect: () => unpairSource.connectSource(`gdbus call --session --dest org.kde.kdeconnect --object-path /modules/kdeconnect/devices/${id} --method org.kde.kdeconnect.device.unpair 2>/dev/null`),
-                disconnectLabel: i18n("Unpair"),
                 disconnectTooltip: i18n("Unpair KDE Connect device")
             })
         }

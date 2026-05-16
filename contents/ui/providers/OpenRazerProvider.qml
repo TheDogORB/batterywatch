@@ -29,7 +29,7 @@ Item {
     property var knownDevices: ({})
     readonly property var emptyList: []
 
-    property bool razerEnabled: Plasmoid.configuration.useOpenRazerIntegration
+    property bool razerEnabled: Plasmoid.configuration.enableOpenRazerIntegration
 
     onRazerEnabledChanged: {
         if (!razerEnabled) {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: batterywatch\n"
 "Report-Msgid-Bugs-To: https://github.com/itayavra/batterywatch\n"
-"POT-Creation-Date: 2026-03-24 22:15+0200\n"
+"POT-Creation-Date: 2026-05-16 22:39+0300\n"
 "PO-Revision-Date: 2026-01-03 21:15+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,32 +26,156 @@ msgid "Appearance"
 msgstr "תצוגה"
 
 #: ../contents/config/config.qml
+msgid "Integrations"
+msgstr "אינטגרציות"
+
+#: ../contents/config/config.qml
+msgid "Advanced settings"
+msgstr "הגדרות מתקדמות"
+
+#: ../contents/ui/config/AdvancedSettings.qml
+msgid "Toggle Debug mode"
+msgstr "מצב דיבאג"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "System Default (%1)"
+msgstr "ברירת מחדל של המערכת (%1)"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Tray Text Settings"
+msgstr "הגדרות טקסט במגש"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font family:"
+msgstr "גופן:"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Change the font family used for system tray text."
+msgstr "שינוי הגופן המשמש לטקסט במגש."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Style"
+msgstr "סגנון"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Bold"
+msgstr "מודגש"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Make the tray text bold.\n"
+"Adjust weight between 100 and 1000."
+msgstr ""
+"הפוך את הטקסט במגש למודגש.\n"
+"כוון את המשקל בין 100 ל-1000."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Italic"
+msgstr "נטוי"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Make the tray text italic."
+msgstr "הפוך את הטקסט במגש לנטוי."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Sizes"
+msgstr "גדלים"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Font"
+msgstr "גופן"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray text (in pixels)."
+msgstr "כוון את גודל הטקסט במגש (בפיקסלים)."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Icon"
+msgstr "סמל"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Adjust the size of tray icons (in pixels)."
+msgstr "כוון את גודל הסמלים במגש (בפיקסלים)."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Battery Colors"
+msgstr "צבע סוללה"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Use when no other color state applies. When disabled, system color is used instead."
+msgstr "בשימוש כאשר אף מצב צבע אחר אינו חל. כשמבוטל, נעשה שימוש בצבע המערכת."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Charging"
+msgstr "טעינה"
+
+#: ../contents/ui/config/Appearance.qml
+msgid ""
+"Overrides all other colors when device is charging.\n"
+"Not all devices are currently supported!"
+msgstr ""
+"דורס את כל הצבעים האחרים כאשר המכשיר בטעינה.\n"
+"לא כל המכשירים נתמכים כרגע."
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 1"
+msgstr "סף 1"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "≤"
+msgstr "≤"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "%"
+msgstr "%"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Applied when battery falls below the set threshold."
+msgstr "מופעל כאשר הסוללה יורדת מתחת לסף שנקבע"
+
+#: ../contents/ui/config/Appearance.qml
+msgid "Zone 2"
+msgstr "סף 2"
+
+#: ../contents/ui/config/Modules.qml
 msgid "OpenLinkHub Integration"
 msgstr "אינטגרציה עם OpenLinkHub"
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Font Size: "
-msgstr "גודל גופן מותאם אישית: "
+#: ../contents/ui/config/Modules.qml
+msgid "Enable: "
+msgstr "הפעל: "
 
-#: ../contents/ui/config/Appearance.qml ../contents/ui/config/OpenLinkHub.qml
+#: ../contents/ui/config/Modules.qml
 msgid "Enabled"
 msgstr "פעיל"
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Size (px): "
-msgstr "גודל (פיקסלים): "
+#: ../contents/ui/config/Modules.qml
+msgid "Port: "
+msgstr "פורט: "
 
-#: ../contents/ui/config/Appearance.qml
-msgid "Custom Device Icon Size: "
-msgstr "גודל סמל מכשיר מותאם אישית: "
+#: ../contents/ui/config/Modules.qml
+msgid "OpenRazer Integration"
+msgstr "אינטגרציה עם OpenRazer"
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "Enable OpenLinkHub Integration: "
-msgstr "אפשר אינטגרציה עם OpenLinkHub: "
+#: ../contents/ui/config/Modules.qml
+msgid "Enable"
+msgstr "הפעל"
 
-#: ../contents/ui/config/OpenLinkHub.qml
-msgid "OpenLinkHub Port: "
-msgstr "פורט OpenLinkHub: "
+#: ../contents/ui/config/Modules.qml
+msgid "Polling interval"
+msgstr "זמן ריענון"
+
+#: ../contents/ui/config/Modules.qml
+msgid "s"
+msgstr "ש׳"
+
+#: ../contents/ui/config/Modules.qml
+msgid "KDE Connect Integration"
+msgstr "אינטגרציה עם KDE Connect"
 
 #. i18n: %1 is the version number.
 #: ../contents/ui/main.qml
@@ -112,14 +236,14 @@ msgstr "סוללה"
 #. i18n: %1 is the battery label or simply the word, ‘Battery’. %2 is the charge percentage value.
 #. %3 is a Unicode lightning symbol displayed when the device is charging.
 #: ../contents/ui/main.qml
-msgid "%1: %2%%3"
-msgstr "%1: %2%%3"
+msgid "%1: <span style=\"color:%4\">%2%</span>%3"
+msgstr "%1: <span style=\"color:%4\">%2%</span>%3"
 
 #: ../contents/ui/main.qml
 msgid "Disconnect"
 msgstr "נתק"
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/main.qml ../contents/ui/providers/CompanionProvider.qml ../contents/ui/providers/UPowerProvider.qml
 msgid "Disconnect device"
 msgstr "נתק מכשיר"
 
@@ -148,8 +272,24 @@ msgid "BatteryWatch: Companion service disconnected"
 msgstr "BatteryWatch: BatteryWatch Companion נותק"
 
 #: ../contents/ui/providers/CompanionProvider.qml
+msgid "BatteryWatch: Companion service connected"
+msgstr "BatteryWatch: BatteryWatch Companion מחובר"
+
+#: ../contents/ui/providers/CompanionProvider.qml
 msgid "BatteryWatch: Failed to parse companion data:"
 msgstr "BatteryWatch: נכשל ניתוח נתוני BatteryWatch Companion:"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "Unpair KDE Connect device"
+msgstr "נתק מכשיר KDE Connect"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon unavailable"
+msgstr "BatteryWatch: שירות KDE Connect אינו זמין"
+
+#: ../contents/ui/providers/KDEConnectProvider.qml
+msgid "BatteryWatch: KDE Connect daemon connected"
+msgstr "BatteryWatch: שירות KDE Connect מחובר"
 
 #. i18n: %1 is the number of devices found.
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
@@ -225,6 +365,10 @@ msgstr "נכשל ניתוח נתוני מכשיר:"
 #: ../contents/ui/providers/OpenLinkHubProvider.qml
 msgid "Server error fetching device '%1':"
 msgstr "שגיאת שרת במשיכת מכשיר '%1':"
+
+#: ../contents/ui/providers/OpenRazerProvider.qml
+msgid "Unknown Razer Device"
+msgstr "מכשיר Razer לא ידוע"
 
 #. i18n: Used when a device is known by BatteryWatch to be misreported by UPower.
 #. %1 is the device's model name. %2 is the erroneously reported device type (e.g.: ‘mouse’).

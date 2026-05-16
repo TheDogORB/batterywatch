@@ -324,7 +324,7 @@ KCMUtils.SimpleKCM {
 
                 QQC2.ToolTip {
                     visible: zoneOneHelp.hovered
-                    text: i18n("Applied when battery falls below the set threshold")
+                    text: i18n("Applied when battery falls below the set threshold.")
                 }
             }
         }
@@ -376,7 +376,7 @@ KCMUtils.SimpleKCM {
 
                 QQC2.ToolTip {
                     visible: zoneTwoHelp.hovered
-                    text: i18n("Applied when battery falls below the set threshold")
+                    text: i18n("Applied when battery falls below the set threshold.")
                 }
             }
         }

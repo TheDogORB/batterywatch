@@ -470,7 +470,7 @@ PlasmoidItem {
                                         PlasmaComponents.ToolButton {
                                             visible: typeof device.disconnect === "function"
                                             icon.name: "network-disconnect"
-                                            text: device.disconnectLabel || i18n("Disconnect")
+                                            text: i18n("Disconnect")
                                             display: PlasmaComponents.AbstractButton.IconOnly
                                             onClicked: device.disconnect()
 

@@ -14,24 +14,24 @@
     </entry>
   </group>
 
-  <!-- Appearance section -->
+  <!-- Appearance -->
   <group name="Appearance">
     <entry name="fontFamily" type="String">
-      <label>Widget font family</label>
+      <label>Font family</label>
       <default></default>
     </entry>
 
     <entry name="fontBold" type="Bool">
-      <label>Shall font be bold?</label>
+      <label>Bold font</label>
       <default>false</default>
     </entry>
     <entry name="fontWeight" type="Int">
-      <label>Thickness of bold</label>
-      <default>500</default>
+      <label>Bold weight</label>
+      <default>700</default>
     </entry>
 
     <entry name="fontItalic" type="Bool">
-      <label>Shall font be italic?</label>
+      <label>Italic font</label>
       <default>false</default>
     </entry>
 
@@ -48,13 +48,14 @@
     <entry name="customIconSize" type="Int">
       <default>22</default>
     </entry>
-    <!-- COLORS -->
+
+    <!-- Colors -->
     <entry name="useCustomDefaultColor" type="Bool">
-      <label>Enable custom battery colors</label>
+      <label>Custom default battery color</label>
       <default>false</default>
     </entry>
     <entry name="customDefaultColor" type="Color">
-      <label>Changes default color of battery</label>
+      <label>Default battery color</label>
       <default>#FFFFFF</default>
     </entry>
 
@@ -65,34 +66,35 @@
       <default>#2196F3</default>
     </entry>
 
-    <entry name="zoneOneColor" type="Color">
-      <label>Changes color of battery when below threshold of zone one</label>
-      <default>#DFC04C</default>
-    </entry>
+
     <entry name="useZoneOneColor" type="Bool">
-      <label>Toggle to allow use of zone one</label>
+      <label>Zone 1 enabled</label>
       <default>false</default>
     </entry>
+    <entry name="zoneOneColor" type="Color">
+      <label>Zone 1 color</label>
+      <default>#DFC04C</default>
+    </entry>
     <entry name="zoneOneThreshold" type="Int">
-      <label>Sets threshold for zone one, when below change color</label>
+      <label>Zone 1 threshold</label>
       <default>40</default>
     </entry>
 
     <entry name="useZoneTwoColor" type="Bool">
-      <label>Toggle to allow use of zone two</label>
+      <label>Zone 2 enabled</label>
       <default>false</default>
     </entry>
     <entry name="zoneTwoColor" type="Color">
-      <label>Changes color of battery when below threshold of zone two</label>
+      <label>Zone 2 color</label>
       <default>#EE665A</default>
     </entry>
     <entry name="zoneTwoThreshold" type="Int">
-      <label>Sets threshold for zone two, when below change color</label>
+      <label>Zone 2 threshold</label>
       <default>20</default>
     </entry>
   </group>
 
-  <!-- PROVIDERS -->
+  <!-- Integrations -->
   <group name="OpenLinkHub">
     <entry name="enableOpenLinkHubIntegration" type="Bool">
       <default>true</default>
@@ -103,7 +105,7 @@
   </group>
 
   <group name="OpenRazer">
-    <entry name="useOpenRazerIntegration" type="Bool">
+    <entry name="enableOpenRazerIntegration" type="Bool">
       <default>true</default>
     </entry>
     <entry name="openRazerPollingTime" type="Int">
@@ -112,7 +114,7 @@
   </group>
 
   <group name="KDEConnect">
-    <entry name="useKDEConnectIntegration" type="Bool">
+    <entry name="enableKDEConnectIntegration" type="Bool">
       <default>true</default>
     </entry>
     <entry name="kdeConnectPollingTime" type="Int">

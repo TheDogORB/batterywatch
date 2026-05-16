@@ -8,7 +8,7 @@ ConfigModel {
         source: "config/Appearance.qml"
     }
     ConfigCategory {
-        name: i18n("Provider modules")
+        name: i18n("Integrations")
         icon: "network-connect"
         source: "config/Modules.qml"
     }
