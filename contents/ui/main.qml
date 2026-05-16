@@ -30,8 +30,12 @@ PlasmoidItem {
         id: openRazerProvider
     }
 
+    KDEConnectProvider {
+        id: kdeConnectProvider
+    }
+
     // List of providers (in priority order)
-    property var providers: [upowerProvider, companionProvider, openLinkHubProvider, openRazerProvider]
+    property var providers: [upowerProvider, companionProvider, openLinkHubProvider, openRazerProvider, kdeConnectProvider]
 
     // Debug mode
     property bool debugMode: Plasmoid.configuration.debugMode
@@ -250,23 +254,6 @@ PlasmoidItem {
         }
     }
 
-    P5Support.DataSource {
-        id: bluetoothCtlSource
-        engine: "executable"
-        connectedSources: []
-        interval: 0
-
-        onNewData: (sourceName, data) => {
-            disconnectSource(sourceName);
-            Qt.callLater(refreshDevices);
-        }
-    }
-
-    function disconnectBluetoothDevice(bluetoothAddress) {
-        if (bluetoothAddress) {
-            bluetoothCtlSource.connectSource("bluetoothctl disconnect " + bluetoothAddress);
-        }
-    }
 
     // ═══════════════════════════════════════════════════════════════════════
     // COMPACT REPRESENTATION (System Tray)
@@ -482,14 +469,14 @@ PlasmoidItem {
                                         Layout.alignment: Qt.AlignVCenter
 
                                         PlasmaComponents.ToolButton {
-                                            visible: device.connectionType === 2 && device.bluetoothAddress
+                                            visible: typeof device.disconnect === "function"
                                             icon.name: "network-disconnect"
-                                            text: i18n("Disconnect")
+                                            text: device.disconnectLabel || i18n("Disconnect")
                                             display: PlasmaComponents.AbstractButton.IconOnly
-                                            onClicked: disconnectBluetoothDevice(device.bluetoothAddress)
+                                            onClicked: device.disconnect()
 
                                             PlasmaComponents.ToolTip {
-                                                text: i18n("Disconnect device")
+                                                text: device.disconnectTooltip || i18n("Disconnect device")
                                             }
 
                                             MouseArea {
