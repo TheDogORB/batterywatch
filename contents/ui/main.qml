@@ -507,7 +507,7 @@ PlasmoidItem {
                                         // Single battery: show percentage
                                         PlasmaComponents.Label {
                                             visible: !hasMultipleBatteries
-                                            text: i18n("%1%", device.percentage)
+                                            text: i18n("%1%%2", device.percentage, device.charging ? " ⚡" : "")
                                             color: batteryColor(device.percentage, device.charging)
                                             font.bold: true
                                             Layout.minimumWidth: Kirigami.Units.gridUnit * 2
