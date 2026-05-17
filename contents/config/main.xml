@@ -65,6 +65,9 @@
     <entry name="chargingColor" type="Color">
       <default>#2196F3</default>
     </entry>
+    <entry name="showTrayChargingIndicator" type="Bool">
+      <default>true</default>
+    </entry>
 
 
     <entry name="useZoneOneColor" type="Bool">
