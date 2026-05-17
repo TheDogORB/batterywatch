@@ -24,8 +24,8 @@ Item {
         }
     }
 
-    // qdbus outputs one ID per line — simpler to parse than gdbus GVariant format
-    readonly property string listCmd: "qdbus org.kde.kdeconnect /modules/kdeconnect org.kde.kdeconnect.daemon.devices true true 2>/dev/null"
+    // gdbus call for listing devices — avoids qdbus/qdbus6 availability issues on Qt5 vs Qt6 systems
+    readonly property string listCmd: "gdbus call --session --dest org.kde.kdeconnect --object-path /modules/kdeconnect --method org.kde.kdeconnect.daemon.devices true true 2>/dev/null"
 
     // gdbus GetAll fetches all properties in one call; lighter than qdbus (no Qt startup)
     function propsCmd(id) {
@@ -118,8 +118,12 @@ Item {
                 return
             }
 
-            // qdbus outputs one device ID per line
-            const ids = data.stdout.split("\n").map(s => s.trim()).filter(Boolean)
+            // gdbus outputs GVariant format: (['id1', 'id2'],)
+            const ids = []
+            const re = /'([^']+)'/g
+            let m
+            while ((m = re.exec(data.stdout)) !== null)
+                ids.push(m[1])
             const wasEmpty = Object.keys(root.knownDevices).length === 0
             let current = {}
 
